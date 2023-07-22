@@ -6,9 +6,17 @@ import shutil
 from colorama import Fore, Back, Style, init
 import logging
 import colorama
+import subprocess
+import sys
 
 # Set up logging 
 logging.basicConfig(filename='requirements-state.log', level=logging.INFO)
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# List of requirements
+required_packages = ['requests', 'colorama']
 
 def clear_console():
     if platform.system() == "Windows":
