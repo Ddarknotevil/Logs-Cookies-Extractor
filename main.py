@@ -16,7 +16,7 @@ def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # List of requirements
-required_packages = ['requests', 'colorama']
+required_packages = ['colorama']
 
 def clear_console():
     if platform.system() == "Windows":
